@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import '../theme/theme.dart';
+import 'main_page.dart';
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -86,9 +87,7 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 30),
               // Login Button
               ElevatedButton(
-                onPressed: () {
-                  // Handle login/registration logic here
-                },
+                onPressed: () {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const MainPage()));}, 
                 style: ElevatedButton.styleFrom(
                   backgroundColor: isLogin
                       ? DoDidDoneTheme.lightTheme.colorScheme.secondary

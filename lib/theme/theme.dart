@@ -12,11 +12,15 @@ class DoDidDoneTheme {
     // Add this to style the text buttons
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-        foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-        textStyle: MaterialStateProperty.all<TextStyle>(
+        foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
+        textStyle: WidgetStateProperty.all<TextStyle>(
           const TextStyle(color: Colors.white),
         ),
       ),
+    ),
+     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      selectedItemColor: Color(0xFF9F7BF6), // Primary color
+      unselectedItemColor: Color(0xFF4CE8B8) // Unselected icon color
     ),
   );
 }
