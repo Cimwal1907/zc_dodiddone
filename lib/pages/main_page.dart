@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../screen/all_tasks.dart';
 import '../screen/profile.dart';
 import '../theme/theme.dart';
 class MainPage extends StatefulWidget {
@@ -9,10 +10,11 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   int _selectedIndex = 0;
   // Define the pages for each tab
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text('Задачи'),
+  static final List<Widget> _widgetOptions = <Widget>[
+    TasksPage(),
     Text('Сегодня'),
     Text('Выполнено'),
+    // ignore: prefer_const_constructors
     ProfilePage(), // Use ProfilePage for the Profile tab
   ];
   void _onItemTapped(int index) {
