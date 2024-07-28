@@ -58,7 +58,7 @@ class _MainPageState extends State<MainPage> {
               SizedBox(height: 20),
               Row(
                 children: [
-                  Icon(Icons.calendar_today, size: 25, color: Colors.grey[600]),
+                  Icon(Icons.calendar_today, size: 25, color: Colors.green[600]),
                   SizedBox(width: 10),
                   TextButton(
                     onPressed: () async {
