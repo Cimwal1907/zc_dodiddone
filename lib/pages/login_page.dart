@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import '../theme/theme.dart';
 import 'main_page.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
+
 class _LoginPageState extends State<LoginPage> {
   bool isLogin = true; // Track if the user is on login or registration page
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,13 +37,48 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset('lib/assets/logo.png', height: 60,),
+                  const SizedBox(width: 8),
+                  Text(
+                    'zerocoder',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 62,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
               // Title
-              Text(
-                isLogin ? 'Вход' : 'Регистрация',
-                style: const TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+              RichText(
+                text: TextSpan(
+                  style: const TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: 'Do',
+                      style: TextStyle(
+                        color: DoDidDoneTheme.lightTheme.colorScheme.primary,
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'Did',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'Done',
+                      style: TextStyle(
+                        color: DoDidDoneTheme.lightTheme.colorScheme.secondary,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               const SizedBox(height: 30),
@@ -87,7 +126,12 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 30),
               // Login Button
               ElevatedButton(
-                onPressed: () {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const MainPage()));}, 
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MainPage()),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: isLogin
                       ? DoDidDoneTheme.lightTheme.colorScheme.secondary
